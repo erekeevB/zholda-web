@@ -1,0 +1,27 @@
+.calculatorContainer {
+	width: 508px;
+	padding: 28px 32px 32px;
+	background: #FFFFFF;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: 28px;
+	width: 100%;
+	text-align: start;
+	margin: 0 0 16px;
+}
+
+.selectTab {
+	margin-bottom: 24px;
+	width: 100%;
+}
+
+.button {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 18px;
+	width: 100%;
+}

@@ -1,0 +1,52 @@
+.modal {
+	background: #FFFFFF;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	position: absolute;
+	width: fit-content;
+	padding: 24px 20px 20px;
+	top: 120px;
+	right: 275px;
+	z-index: 101;
+}
+
+.contactItem {
+	display: flex;
+	column-gap: 10px;
+	text-align: start;
+	align-items: center;
+	margin-bottom: 24px;
+}
+
+.icon {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+}
+
+.green {
+	background-color: #5FA854;
+}
+
+.phone {
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 21px;
+	margin-bottom: 2px;
+	color: #333333;
+}
+
+.contactText {
+	font-size: 14px;
+	line-height: 16px;
+	color: #BABABA;
+}
+
+.button {
+	padding: 15px 60px;
+	font-weight: 500;
+	min-width: 286px;
+}

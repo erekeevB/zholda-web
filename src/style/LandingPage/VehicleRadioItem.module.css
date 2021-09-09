@@ -1,0 +1,35 @@
+.radioItemWrapper {
+	width: 100%;
+}
+
+.radioItem {
+	padding: 8px;
+}
+
+.radioUpperContainer {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: flex-start;
+	column-gap: 8px;
+	height: 28px;
+}
+
+svg {
+	color: #E1E1E1;
+}
+
+.selectedVehicleIcon {
+	color: #00AAC0;
+}
+
+.radioName {
+	font-size: 16px;
+}
+
+.radioPrice {
+	width: 100%;
+	text-align: end;
+	font-size: 18px;
+	font-weight: 500;
+}

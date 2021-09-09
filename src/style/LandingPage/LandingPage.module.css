@@ -1,0 +1,66 @@
+.container {
+	position: relative;
+}
+
+.headerSection {
+	background-color: #F8FBFF;
+}
+
+.headerSectionWrapper {
+	padding-top: 80px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.headerContainer {
+	padding-top: 47px;
+	text-align: start;
+	margin-left: 60px;
+}
+
+.mainHeader {
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 40px;
+	text-transform: uppercase;
+	color: #343435;
+	margin-bottom: 16px;
+}
+
+.subHeader {
+	display: block;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 30px;
+	color: #343435;
+}
+
+.backgroundImg {
+	position: absolute;
+	top: 215px;
+}
+
+.calculator {
+	margin-right: 120px;
+	z-index: 10;
+	margin-bottom: 250px;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 42px;
+	text-align: center;
+	color: #343435;
+	padding-top: 130px;
+	margin-bottom: 8px;
+}
+
+h3 {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	color: #343435;
+}

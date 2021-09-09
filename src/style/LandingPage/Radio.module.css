@@ -1,0 +1,14 @@
+.container {
+	display: flex;
+	align-items: center;
+	column-gap: 16px;
+}
+
+.item {
+	border-radius: 5px;
+	border: 1px solid #E1E1E1;
+}
+
+.selected {
+	border-color: #00AAC0;
+}
