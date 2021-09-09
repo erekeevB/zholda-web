@@ -1,0 +1,16 @@
+.container {
+	width: 100%;
+	margin-bottom: 16px;
+}
+
+.label {
+	font-size: 16px;
+	color: #343435;
+	margin-bottom: 6px;
+	display: block;
+	text-align: start;
+}
+
+input {
+	width: 100%;
+}

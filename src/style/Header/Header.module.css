@@ -59,10 +59,40 @@
 
 }
 
-
-.buttonContainer {
+.buttonContainerDesktop {
 	display: flex;
 	align-items: center;
 	height: fit-content;
 	column-gap: 16px;
+}
+
+.buttonMobile {
+	display: none;
+}
+
+@media only screen and (max-width: 560px) {
+
+	.headerContainer {
+		padding: 45px 14px 14px;
+		box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+	}
+
+	.logo {
+		width: 154px;
+	}
+
+	.buttonContainerDesktop {
+		display: none;
+	}
+
+	.buttonMobile {
+		display: flex;
+		background-color: #FDBF3D;
+	}
+
+	.dropdownWrapper {
+		height: 45px;
+		width: 45px;
+		margin: 0;
+	}
 }

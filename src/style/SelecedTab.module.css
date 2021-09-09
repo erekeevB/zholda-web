@@ -1,0 +1,34 @@
+.container {
+	display: flex;
+	align-items: center;
+	padding: 3px;
+	background-color: rgba(225, 225, 225, 0.3);
+	width: fit-content;
+	border-radius: 5px;
+	font-size: 16px;
+	text-align: center;
+	height: fit-content;
+}
+
+.tab {
+	cursor: pointer;
+	min-width: 148px;
+	color: #B5B5B5;
+	flex: 1;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	padding: 9px 10px 7px;
+}
+
+.selected {
+	color: #00AAC0;
+	background-color: white;
+	border-radius: 3px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 560px) {
+	.tab {
+		min-width: 0;
+	}
+}

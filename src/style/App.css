@@ -1,40 +1,7 @@
 .App {
 	text-align: center;
-}
-
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
-}
-
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
-}
-
-.App-link {
-	color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+	font-family: Roboto, sans-serif;
+	position: relative;
 }
 
 button {
@@ -42,12 +9,12 @@ button {
 	font-size: 16px;
 	line-height: 18px;
 	border-width: 1px;
-	padding: 11px 28px;
+	padding: 10px 28px;
 }
 
 button.primary {
 	background-color: #00AAC0;
-	border: none;
+	border: 1px #00AAC0 solid;
 	color: #fff;
 }
 
@@ -55,4 +22,55 @@ button.primary-outline {
 	background-color: transparent;
 	border: 1px #00AAC0 solid;
 	color: #00AAC0;
+}
+
+button.secondary {
+	background: #FDBF3D;
+	border: 1px #FDBF3D solid;
+	color: #fff;
+}
+
+button.secondary-outline {
+	background-color: transparent;
+	border: 1px #FDBF3D solid;
+	color: #FDBF3D;
+}
+
+input {
+	padding-left: 16px;
+	padding-top: 16px;
+	padding-bottom: 15px;
+	border-radius: 5px;
+	border: 1px solid #E1E1E1;
+	display: block;
+	flex: 1;
+	font-size: 16px;
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #B5B5B5;
+	opacity: 1; /* Firefox */
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #B5B5B5;
+}
+
+input::-ms-input-placeholder { /* Microsoft Edge */
+	color: #B5B5B5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+.modalBackground {
+	position: absolute;
+	top: 100px;
+	left: 0;
+	width: 100vw;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.15);
+	z-index: 100;
 }

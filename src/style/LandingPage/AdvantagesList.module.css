@@ -26,15 +26,15 @@
 	margin-bottom: 20px;
 }
 
-:global(.yellow) {
+.list :global(.yellow) {
 	background-color: #FDBF3D;
 }
 
-:global(.blue) {
+.list :global(.blue) {
 	background-color: #00AAC0;
 }
 
-:global(.green) {
+.list :global(.green) {
 	background-color: #2BB26E;
 }
 
@@ -53,4 +53,28 @@
 	width: 100%;
 	font-size: 16px;
 	line-height: 30px;
+}
+
+@media only screen and (max-width: 560px) {
+	.list {
+		display: block;
+		margin-bottom: 0;
+	}
+
+	.item {
+		width: calc(100% - 32px);
+		margin: 0 0 24px 16px;
+		padding: 24px 16px 16px;
+	}
+
+	.name {
+		font-size: 14px;
+		line-height: 18px;
+		margin-bottom: 16px;
+	}
+
+	.button {
+		line-height: 30px;
+		padding: 4px 0 5px;
+	}
 }

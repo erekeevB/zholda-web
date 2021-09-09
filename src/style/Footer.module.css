@@ -1,0 +1,77 @@
+.container {
+	text-align: start;
+	padding: 50px 60px;
+}
+
+.container a {
+	display: block;
+	width: fit-content;
+	font-size: 16px;
+	line-height: 24px;
+	color: #343435;
+	margin: 0 0 8px;
+	cursor: pointer;
+}
+
+.container a:hover {
+	text-decoration-line: underline;
+	color: #FDBF3D;
+}
+
+.mainContainer {
+	display: flex;
+	justify-content: space-between;
+	white-space: nowrap;
+	margin-bottom: 70px;
+}
+
+.logoContainer > svg {
+	margin-bottom: 30px;
+}
+
+.contactItem {
+	display: flex;
+	align-items: center;
+	column-gap: 16px;
+	font-size: 16px;
+	line-height: 16px;
+	color: #00AAC0;
+	margin-bottom: 16px;
+}
+
+.contactItem svg {
+	fill: #00AAC0;
+	width: 24px;
+	height: 24px;
+}
+
+.schedule {
+	font-size: 16px;
+	line-height: 43px;
+	color: #343435;
+}
+
+.groupHeader {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 43px;
+	color: #343435;
+	margin-bottom: 16px;
+}
+
+.copyright {
+	font-size: 16px;
+	line-height: 43px;
+	color: #B5B5B5;
+}
+
+@media only screen and (max-width: 560px) {
+	.mainHeader {
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	.mainContainer {
+		display: block;
+	}
+}

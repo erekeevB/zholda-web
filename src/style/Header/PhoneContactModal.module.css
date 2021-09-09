@@ -10,6 +10,44 @@
 	z-index: 101;
 }
 
+.headerContainer {
+	margin: 0 -15px 30px;
+	padding: 45px 14px 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	width: 154px;
+}
+
+.dropdownWrapper {
+	height: 45px;
+	width: 45px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background-color: #FDBF3D;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.dropdownWrapper svg {
+	fill: white;
+}
+
+.mobileTitle {
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+	color: #343435;
+	margin-bottom: 25px;
+	text-align: start;
+}
+
 .contactItem {
 	display: flex;
 	column-gap: 10px;
@@ -32,7 +70,7 @@
 }
 
 .phone {
-	font-weight: bold;
+	font-weight: 500;
 	font-size: 18px;
 	line-height: 21px;
 	margin-bottom: 2px;
@@ -49,4 +87,21 @@
 	padding: 15px 60px;
 	font-weight: 500;
 	min-width: 286px;
+}
+
+.button.mobile {
+	margin-top: 100%;
+	width: 100%;
+}
+
+@media only screen and (max-width: 560px) {
+	.modal {
+		height: 100%;
+		top: 0;
+		position: fixed;
+		left: 0;
+		width: 100%;
+		border-radius: 0;
+		padding: 0 15px 40px;
+	}
 }

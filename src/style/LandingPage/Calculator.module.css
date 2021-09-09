@@ -6,7 +6,7 @@
 	border-radius: 10px;
 }
 
-h4 {
+.calculatorContainer h4 {
 	font-weight: 400;
 	font-size: 28px;
 	width: 100%;
@@ -24,4 +24,33 @@ h4 {
 	font-size: 16px;
 	line-height: 18px;
 	width: 100%;
+	padding: 15px 0;
+}
+
+@media only screen and (max-width: 560px) {
+	.calculatorContainer {
+		width: 100%;
+		border-radius: 0;
+		padding: 24px 16px;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		margin-top: 72px;
+	}
+
+	.calculatorContainer h4 {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 23px;
+	}
+
+	.mainContainer {
+		display: block;
+	}
+
+	.selectTab {
+		margin-bottom: 16px;
+	}
+
+	.button {
+		margin-top: 8px;
+	}
 }

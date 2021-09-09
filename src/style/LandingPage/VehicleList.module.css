@@ -18,6 +18,18 @@
 
 .description {
 	display: none;
+	min-width: 250px;
+	text-align: center;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	position: absolute;
+	top: 100%;
+	margin-top: 10px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 20px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #343435;
 }
 
 .button {
@@ -36,21 +48,32 @@
 	object-fit: contain;
 }
 
+.nameWrapper {
+	margin-left: -24px;
+	margin-right: -24px;
+	display: flex;
+	justify-content: center;
+}
+
 .name {
+	width: fit-content;
 	font-size: 20px;
 	line-height: 20px;
 	color: #343435;
-	margin-left: -24px;
-	margin-right: -24px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	column-gap: 10px;
 	margin-top: 10px;
+	position: relative;
 }
 
-.name > span {
-	max-width: min-content;
+.name:hover svg {
+	fill: #E1E1E1;
+}
+
+.name:hover .description {
+	display: block;
 }
 
 .price {
@@ -68,4 +91,90 @@
 	line-height: 30px;
 	padding-top: 11px;
 	padding-bottom: 9px;
+}
+
+.chevron {
+	border: none;
+	padding: 0;
+	margin: 0;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #FDBF3D;
+	border-radius: 16px;
+	position: absolute;
+	top: 120px;
+	z-index: 10;
+}
+
+.chevron svg {
+	fill: white;
+}
+
+.chevron.right {
+	right: 32px;
+}
+
+.chevron.left {
+	left: 32px;
+	transform: rotate(180deg);
+}
+
+.dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	background-color: #E1E1E1;
+	display: inline-block;
+	margin: 0 4px;
+}
+
+.dot.selected {
+	background-color: #00AAC0;
+}
+
+:global(.carousel-status) {
+	display: none;
+}
+
+@media only screen and (max-width: 560px) {
+	.button {
+		visibility: visible;
+	}
+
+	.itemContainer {
+		padding-top: 46px;
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		margin: 32px 16px 35px;
+		z-index: 15;
+	}
+
+	.img {
+		max-width: 220px;
+	}
+
+	.description {
+		font-size: 16px;
+		line-height: 18px;
+		z-index: 15;
+		min-width: 270px;
+	}
+
+	.container :global(.carousel .slider-wrapper) {
+		overflow: visible !important;
+	}
+
+	.container :global(.carousel.carousel-slider) {
+		overflow: visible !important;
+	}
+
+	.container :global(.carousel .control-dots) {
+		z-index: unset;
+	}
+
+	.container :global(.carousel .thumbs-wrapper) {
+		display: none;
+	}
 }
