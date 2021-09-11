@@ -15,8 +15,9 @@ const Calculator = ({className}) => {
 	const [to, setTo] = useState('')
 
 	const handleSubmit = () => {
-		console.log('AAA')
 		openOrderModal({from, to, cityCategory})
+		setFrom('')
+		setTo('')
 	}
 
 	return (

@@ -11,6 +11,16 @@
 	text-align: start;
 }
 
-input {
+.input {
 	width: 100%;
+}
+
+.input.error {
+	border-color: #D65745;
+}
+
+.errorMsg {
+	margin-top: 8px;
+	font-size: 14px;
+	color: #D65745;
 }

@@ -5,72 +5,107 @@ import {ReactComponent as Close} from "../static/icons/close.svg";
 import {useState} from "react";
 import SelectTab from "./SelectTab";
 import {ReactComponent as Info} from "../static/icons/info.svg";
-import Input from "./Input";
 import Button from "./Button";
+import {toast} from "react-hot-toast";
+import {Desktop, Mobile} from "./MediaContainer";
+import useInput from "../utils/useInput";
+import {emptyStrValidation, phoneValidation, validateAllInputs} from "../utils/validation";
 
 const OrderModal = () => {
 
 	const vehicleType = useOrderModal(state => state.vehicleType)
 	const closeModal = useOrderModal(state => state.closeModal)
+	const sendOrderInfo = useOrderModal(state => state.sendOrderInfo)
 	const initialFrom = useOrderModal(state => state.from)
 	const initialTo = useOrderModal(state => state.to)
 	const initialCityCategory = useOrderModal(state => state.cityCategory)
 
 	const [cityCategory, setCityCategory] = useState(initialCityCategory ?? 'Город')
-	const [from, setFrom] = useState(initialFrom)
-	const [to, setTo] = useState(initialTo)
-	const [name, setName] = useState('')
-	const [phone, setPhone] = useState('')
+
+	const from = useInput({
+		label: 'Откуда?',
+		placeholder: 'Введите город-отправитель',
+		initialValue: initialFrom,
+		validation: emptyStrValidation
+	})
+
+	const to = useInput({
+		label: 'Куда?',
+		placeholder: 'Введите город-получатель',
+		initialValue: initialTo,
+		validation: emptyStrValidation
+	})
+
+	const name = useInput({
+		label: 'Ваше имя',
+		placeholder: 'Введите Ваше имя',
+		validation: emptyStrValidation
+	})
+
+	const phone = useInput({
+		label: 'Телефон',
+		placeholder: 'Ваш номер телефона',
+		type: 'number',
+		validation: phoneValidation
+	})
 
 	useDisableBodyScroll()
+
+	const handleSendOrder = () => {
+		if (!validateAllInputs(name, phone, to, from)) {
+			sendOrderInfo({
+				to: to.value,
+				from: from.value,
+				name: name.value,
+				phone: phone.value,
+				vehicleType, cityCategory
+			})
+				.then(success => {
+					if (success) {
+						toast.success('Ваша заявка успешно принята. Ждите звонка в течение дня', {
+							duration: 7000,
+							position: 'bottom-right'
+						})
+						closeModal()
+					} else {
+						toast.error('Не удалось отправить заявку! Попробуйте позже.', {position: 'bottom-right'})
+					}
+				})
+		}
+	}
 
 	return (
 		<div className={style.container}>
 			<div className={style.modal}>
-				<div className={style.modalContainer}>
-					<button onClick={closeModal} className={style.close}><Close/></button>
+				<button onClick={closeModal} className={style.close}><Close/></button>
+				<Mobile>
+					<div className={style.header}>Рассчитать заказ</div>
+				</Mobile>
+				<Desktop>
 					<div className={style.header}>Куда доставить?</div>
-					<SelectTab
-						tabs={[
-							'Город',
-							'Межгород',
-							'Международные'
-						]}
-						selectedTab={cityCategory}
-						onSelect={setCityCategory}
-						className={style.selectTab}
-					/>
-					{vehicleType && (
-						<div className={style.badge}>
-							<Info/>
-							<div>{vehicleType}</div>
-						</div>
-					)}
-					<Input
-						label={'Откуда?'}
-						placeholder={'Введите город-отправитель'}
-						value={from}
-						onChange={setFrom}
-					/>
-					<Input
-						label={'Куда?'}
-						placeholder={'Введите город-получатель'}
-						value={to}
-						onChange={setTo}
-					/>
-					<Input
-						label={'Ваше имя'}
-						placeholder={'Введите Ваше имя'}
-						value={name}
-						onChange={setName}
-					/>
-					<Input
-						label={'Телефон'}
-						placeholder={'Ваш номер телефона'}
-						value={phone}
-						onChange={setPhone}
-					/>
-					<Button className={style.button} type={'secondary'}>Оформить заказ</Button>
+				</Desktop>
+				<SelectTab
+					tabs={[
+						'Город',
+						'Межгород',
+						'Международные'
+					]}
+					selectedTab={cityCategory}
+					onSelect={setCityCategory}
+					className={style.selectTab}
+				/>
+				{vehicleType && (
+					<div className={style.badge}>
+						<Info/>
+						<div>{vehicleType}</div>
+					</div>
+				)}
+				{from.Input}
+				{to.Input}
+				{name.Input}
+				{phone.Input}
+				<div className={style.buttonWrapper}>
+					<Button className={style.button} type={'secondary'} onClick={handleSendOrder}>Оформить заказ</Button>
 				</div>
 			</div>
 			<div onClick={closeModal} className={'modalBackground'}/>

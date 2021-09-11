@@ -6,20 +6,23 @@ import style from '../../style/Header/Header.module.css'
 import {useState} from "react";
 import PhoneContactsModal from "./PhoneContactsModal";
 import JoinPartnerModal from "./JoinPartnerModal"
+import useJoinModal from "../../state/useJoinModal";
 
 
 const Header = () => {
 
 	const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-	const [isJoinModalOpen, setIsJoinModalOpen] = useState(false)
+	const closeJoinModal = useJoinModal(state => state.closeModal)
+	const toggleJoinModal = useJoinModal(state => state.toggleModal)
+	const isJoinModalOpen = useJoinModal(state => state.isOpen)
 
 	const toggleDropdown = () => {
-		!isContactModalOpen && setIsJoinModalOpen(false)
+		!isContactModalOpen && closeJoinModal()
 		setIsContactModalOpen(prev => !prev)
 	}
-	const toggleJoinModal = () => {
+	const handleToggleJoinModal = () => {
 		!isJoinModalOpen && setIsContactModalOpen(false)
-		setIsJoinModalOpen(prev => !prev)
+		toggleJoinModal()
 	}
 
 	return (
@@ -41,13 +44,13 @@ const Header = () => {
 				>
 					<ChevronDown/>
 				</button>
-				<Button onClick={toggleJoinModal} type={"primary"}>Стать партнером</Button>
+				<Button onClick={handleToggleJoinModal} type={"primary"}>Стать партнером</Button>
 			</div>
 			{isContactModalOpen ? (
-				<PhoneContactsModal closeModal={toggleDropdown} openModal={toggleJoinModal}/>
+				<PhoneContactsModal closeModal={toggleDropdown} openModal={handleToggleJoinModal}/>
 			) : null}
 			{isJoinModalOpen ? (
-				<JoinPartnerModal closeModal={toggleJoinModal}/>
+				<JoinPartnerModal closeModal={handleToggleJoinModal}/>
 			) : null}
 		</div>
 	)
