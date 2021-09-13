@@ -31,33 +31,33 @@ const Footer = () => {
 				<div className={style.groupContainer}>
 					<div className={style.groupHeader}>О сервисе</div>
 					<div>
-						<a>О компании</a>
-						<a>Правила</a>
-						<a>Контакты</a>
-						<a>Реквизиты</a>
+						<a href='/'>О компании</a>
+						<a href='/'>Правила</a>
+						<a href='/'>Контакты</a>
+						<a href='/'>Реквизиты</a>
 					</div>
 				</div>
 				<div className={style.groupContainer}>
 					<div className={style.groupHeader}>Пользователям</div>
 					<div>
-						<a>Юр. лицам</a>
-						<a>Курьерам</a>
-						<a>Партнерам</a>
-						<a>Магазинам</a>
+						<a href='/'>Юр. лицам</a>
+						<a href='/'>Курьерам</a>
+						<a href='/'>Партнерам</a>
+						<a href='/'>Магазинам</a>
 					</div>
 				</div>
 				<div className={style.groupContainer}>
 					<div className={style.groupHeader}>Помощь</div>
 					<div>
-						<a>Помощь</a>
-						<a>Вопрос-Ответ</a>
-						<a>Политика конфиденциальности</a>
+						<a href='/'>Помощь</a>
+						<a href='/'>Вопрос-Ответ</a>
+						<a href='/'>Политика конфиденциальности</a>
 					</div>
 				</div>
 				<Desktop>
 					<div>
-						<a><img src={AppStore} alt={'app store badge'}/></a>
-						<a><img src={GooglePlay} alt={'google play badge'}/></a>
+						<a href='/'><img src={AppStore} alt={'app store badge'}/></a>
+						<a href='/'><img src={GooglePlay} alt={'google play badge'}/></a>
 					</div>
 				</Desktop>
 			</div>

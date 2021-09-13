@@ -32,10 +32,10 @@ const DownloadApp = () => {
 					</h3>
 				</Mobile>
 				<div className={style.badges}>
-					<a href={'#'}>
+					<a href='/'>
 						<img src={AppStore} alt={'app store badge'}/>
 					</a>
-					<a href={'#'}>
+					<a href='/'>
 						<img src={GooglePlay} alt={'google play badge'}/>
 					</a>
 				</div>
