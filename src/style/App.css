@@ -11,7 +11,7 @@ button {
 	border-width: 1px;
 	padding: 10px 28px;
 	cursor: pointer;
-	transition: all ease 0.3s;
+	transition: background-color ease 0.3s, border ease 0.3s;
 }
 
 button.primary {
@@ -39,8 +39,9 @@ button.secondary-outline {
 }
 
 button:active {
-	border-color: #343435;
+	border-color: #cccccc;
 	background-color: #343435;
+	color: white;
 }
 
 button:disabled {
