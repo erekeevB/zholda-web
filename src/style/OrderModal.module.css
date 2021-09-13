@@ -13,6 +13,7 @@
 }
 
 .close {
+	cursor: pointer;
 	position: absolute;
 	top: 28px;
 	right: 32px;
@@ -78,6 +79,7 @@
 	}
 
 	.close {
+		cursor: pointer;
 		top: 24px;
 		right: 16px;
 	}
