@@ -19,6 +19,7 @@ const OrderModal = () => {
 	const initialFrom = useOrderModal(state => state.from)
 	const initialTo = useOrderModal(state => state.to)
 	const initialCityCategory = useOrderModal(state => state.cityCategory)
+	const isFetching = useOrderModal(state => state.isFetching)
 
 	const [cityCategory, setCityCategory] = useState(initialCityCategory ?? 'Город')
 
@@ -105,7 +106,9 @@ const OrderModal = () => {
 				{name.Input}
 				{phone.Input}
 				<div className={style.buttonWrapper}>
-					<Button className={style.button} type={'secondary'} onClick={handleSendOrder}>Оформить заказ</Button>
+					<Button disabled={isFetching} className={style.button} type={'secondary'} onClick={handleSendOrder}>
+						{isFetching ? 'Загрузка...' : 'Оформить заказ'}
+					</Button>
 				</div>
 			</div>
 			<div onClick={closeModal} className={'modalBackground'}/>

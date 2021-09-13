@@ -9,7 +9,8 @@ const initialState = {
 	vehicleType: null,
 	from: null,
 	to: null,
-	cityCategory: null
+	cityCategory: null,
+	isFetching: false
 }
 
 const useOrderModal = create((set) => ({
@@ -23,6 +24,7 @@ const useOrderModal = create((set) => ({
 	closeModal: () => set(initialState),
 	sendOrderInfo: async ({from, to, phone: formattedPhone, name, vehicleType, cityCategory}) => {
 		try {
+			set({isFetching: true})
 			const phone = getNonFormattedPhone(formattedPhone)
 			await addDoc(getOrdersCollection(), {
 				from, to, name, phone,
@@ -33,7 +35,7 @@ const useOrderModal = create((set) => ({
 			})
 			return true
 		} catch (e) {
-			console.error(e)
+			set({isFetching: false})
 			return false
 		}
 	}

@@ -11,6 +11,7 @@ const JoinPartnerModal = ({closeModal: closeHeaderModal}) => {
 
 	const closeModal = useJoinModal(state => state.closeModal)
 	const sendPartnerInfo = useJoinModal(state => state.sendPartnerInfo)
+	const isFetching = useJoinModal(state => state.isFetching)
 
 	const name = useInput({
 		placeholder: "Ваше имя",
@@ -60,8 +61,8 @@ const JoinPartnerModal = ({closeModal: closeHeaderModal}) => {
 
 					{name.Input}
 					{phone.Input}
-					<Button className={style.button} type={'primary'} onClick={handleSendPartnerInfo}>
-						Отправить
+					<Button disabled={isFetching} className={style.button} type={'primary'} onClick={handleSendPartnerInfo}>
+						{isFetching ? 'Загрузка...' : 'Отправить'}
 					</Button>
 				</div>
 			</div>

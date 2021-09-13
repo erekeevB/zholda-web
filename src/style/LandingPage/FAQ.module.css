@@ -16,6 +16,7 @@
 
 .item {
 	padding: 23px 24px 23px 24px;
+	cursor: pointer;
 }
 
 .item.open {
