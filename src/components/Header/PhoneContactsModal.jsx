@@ -9,8 +9,9 @@ import {useDisableBodyScroll} from "../../utils/useDisabledBodyScroll";
 import {Desktop, Mobile} from "../MediaContainer";
 import {ReactComponent as Logo} from "../../static/logoWithText.svg";
 
-const ContactItem = ({svg, phone, text, style: colorStyle}) => (
-	<div className={style.contactItem}>
+const ContactItem = ({svg, link, phone, text, style: colorStyle}) => {
+
+	const child = <>
 		<div className={style.icon} style={colorStyle}>
 			{svg}
 		</div>
@@ -18,8 +19,12 @@ const ContactItem = ({svg, phone, text, style: colorStyle}) => (
 			<div className={style.phone}>{phone}</div>
 			<div className={style.contactText} dangerouslySetInnerHTML={{__html: text}}/>
 		</div>
-	</div>
-)
+	</>
+
+	return link ?
+		<a href={link} target={'_blank'} className={style.contactItem}>{child}</a> :
+		<div className={style.contactItem}>{child}</div>
+}
 
 
 const PhoneContactsModal = ({closeModal, openModal}) => {
@@ -54,6 +59,7 @@ const PhoneContactsModal = ({closeModal, openModal}) => {
 				/>
 				<ContactItem
 					svg={<Instagram/>}
+					link={'https://www.instagram.com/zholda.kz/'}
 					phone={'Мы в Instagram!'}
 					text={'Подписывайся на <strong>@zholda.kz</strong>'}
 					style={{
