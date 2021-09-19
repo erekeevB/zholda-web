@@ -22,7 +22,7 @@ const ContactItem = ({svg, link, phone, text, style: colorStyle}) => {
 	</>
 
 	return link ?
-		<a href={link} target={'_blank'} className={style.contactItem}>{child}</a> :
+		<a href={link} target={'_blank'} rel={'noreferrer'} className={style.contactItem}>{child}</a> :
 		<div className={style.contactItem}>{child}</div>
 }
 
