@@ -53,6 +53,7 @@ const PhoneContactsModal = ({closeModal, openModal}) => {
 				</Mobile>
 				<ContactItem
 					svg={<WhatsApp/>}
+					link={'https://wa.me/77073640000'}
 					phone={'+7 (707) 364-00-00'}
 					text={'WhatsApp'}
 					style={{background: '#5FA854'}}
