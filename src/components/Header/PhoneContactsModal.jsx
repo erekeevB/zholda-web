@@ -70,7 +70,7 @@ const PhoneContactsModal = ({closeModal, openModal}) => {
 				/>
 				<ContactItem
 					svg={<Phone/>}
-					link={'tel:+7707-156-8226'}
+					link={'tel:+7707-364-0000'}
 					phone={'+7 (707) 364-00-00'}
 					text={'Менеджер (Аружан)'}
 					style={{background: '#FDBF3D'}}
