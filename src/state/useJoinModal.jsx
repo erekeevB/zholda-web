@@ -2,6 +2,7 @@ import create from "zustand";
 import {addDoc} from "firebase/firestore";
 import {getPartnersCollection} from "../firebase/firebase";
 import {getExactTime} from "../utils/getExactTime";
+import emailjs from 'emailjs-com';
 
 const initialState = {
 	isOpen: false,
@@ -21,8 +22,15 @@ const useJoinModal = create((set) => ({
 				createdTime: getExactTime(),
 				createdAt: Date.now()
 			})
+			await emailjs.send(
+				'gmail',
+				process.env.REACT_APP_EMAILJS_PARTNER_TEMPLATE_ID,
+				{name, phone},
+				process.env.REACT_APP_EMAILJS_USER_ID
+			)
 			return true
 		} catch (e) {
+			console.error(e)
 			return false
 		} finally {
 			set({isFetching: false})

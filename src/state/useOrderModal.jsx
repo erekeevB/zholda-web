@@ -3,6 +3,7 @@ import {getOrdersCollection} from "../firebase/firebase";
 import {getNonFormattedPhone} from "../utils/validation";
 import {addDoc} from "firebase/firestore";
 import {getExactTime} from "../utils/getExactTime";
+import emailjs from "emailjs-com";
 
 const initialState = {
 	isOpen: false,
@@ -33,6 +34,12 @@ const useOrderModal = create((set) => ({
 				createdAt: Date.now(),
 				createdTime: getExactTime()
 			})
+			await emailjs.send(
+				'gmail',
+				process.env.REACT_APP_EMAILJS_PARTNER_ORDER_ID,
+				{name, phone, from, to},
+				process.env.REACT_APP_EMAILJS_USER_ID
+			)
 			return true
 		} catch (e) {
 			set({isFetching: false})
