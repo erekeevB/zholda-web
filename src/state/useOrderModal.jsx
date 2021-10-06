@@ -43,6 +43,7 @@ const useOrderModal = create((set) => ({
 			return true
 		} catch (e) {
 			set({isFetching: false})
+			console.error(e)
 			return false
 		}
 	}
