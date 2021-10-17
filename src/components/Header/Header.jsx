@@ -1,6 +1,6 @@
 import {ReactComponent as Logo} from '../../static/logoWithText.svg'
 import {ReactComponent as ChevronDown} from '../../static/icons/expand_more.svg'
-import {ReactComponent as Phone} from '../../static/icons/phone.svg'
+import {ReactComponent as WhatsApp} from "../../static/icons/whatsapp.svg";
 import Button from "../Button";
 import style from '../../style/Header/Header.module.css'
 import {useState} from "react";
@@ -31,7 +31,7 @@ const Header = () => {
 				<Logo className={style.logo}/>
 			</div>
 			<div onClick={toggleDropdown} className={style.buttonMobile + ' ' + style.dropdownWrapper}>
-				<Phone/>
+				<WhatsApp/>
 			</div>
 			<div className={style.buttonContainerDesktop}>
 				<div className={style.infoWrapper}>
