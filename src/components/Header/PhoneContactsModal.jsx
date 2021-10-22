@@ -8,6 +8,7 @@ import {useEffect} from "react";
 import {useDisableBodyScroll} from "../../utils/useDisabledBodyScroll";
 import {Desktop, Mobile} from "../MediaContainer";
 import {ReactComponent as Logo} from "../../static/logoWithText.svg";
+import {phoneLink, whatsAppLink} from "../../utils/constants";
 
 const ContactItem = ({svg, link, phone, text, style: colorStyle}) => {
 
@@ -53,7 +54,7 @@ const PhoneContactsModal = ({closeModal, openModal}) => {
 				</Mobile>
 				<ContactItem
 					svg={<WhatsApp/>}
-					link={'https://wa.me/77073640000'}
+					link={whatsAppLink}
 					phone={'+7 (707) 364-00-00'}
 					text={'WhatsApp'}
 					style={{background: '#5FA854'}}
@@ -70,7 +71,7 @@ const PhoneContactsModal = ({closeModal, openModal}) => {
 				/>
 				<ContactItem
 					svg={<Phone/>}
-					link={'tel:+7707-364-0000'}
+					link={phoneLink}
 					phone={'+7 (707) 364-00-00'}
 					text={'Менеджер (Аружан)'}
 					style={{background: '#FDBF3D'}}

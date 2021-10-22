@@ -5,10 +5,12 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import Footer from "./components/Footer";
 import './firebase/firebase'
 import {Toaster} from "react-hot-toast";
+import ContactButtonMobile from "./components/contactButtonMobile";
 
 function App() {
 	return (
 		<div className="App">
+			<ContactButtonMobile/>
 			<Toaster/>
 			<Router>
 				<Header/>
