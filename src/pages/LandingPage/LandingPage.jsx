@@ -18,11 +18,13 @@ const LandingPage = () => {
 				<div className={style.headerSectionWrapper}>
 					<div className={style.headerContainer}>
 						<h1 className={style.mainHeader}>
-							Грузоперевозка по всему <br/>Казахстану и по СНГ
+							Лидер рынка по грузоперевозкам  более 100 машины<br/>
+							1) Камазы<br/>
+							2) Газели<br/>
+							Оставьте заявку
 						</h1>
 						<span className={style.subHeader}>
-							Арендовать грузовую машину теперь <br/>
-							можно всего за пару кликов от <span className={style.yellow}>4000 тг</span>
+							Перевозка грузов всего по <span className={style.yellow}>190 тг</span> за км
 						</span>
 						<img className={style.backgroundImg} src={headerPhoto1} alt={'machine'}/>
 					</div>
