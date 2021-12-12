@@ -18,8 +18,7 @@ const LandingPage = () => {
 				<div className={style.headerSectionWrapper}>
 					<div className={style.headerContainer}>
 						<h1 className={style.mainHeader}>
-							Аренда Грузового транспорта<br/>
-							ПО всему Казахстану
+							Грузоперевозка по всему <br/>Казахстану и по СНГ
 						</h1>
 						<span className={style.subHeader}>
 							Арендовать грузовую машину теперь <br/>
