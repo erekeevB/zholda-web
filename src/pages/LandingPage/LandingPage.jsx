@@ -18,13 +18,16 @@ const LandingPage = () => {
 				<div className={style.headerSectionWrapper}>
 					<div className={style.headerContainer}>
 						<h1 className={style.mainHeader}>
-							Лидер рынка по грузоперевозкам  более 100 машины<br/>
-							1) Камазы<br/>
-							2) Газели<br/>
-							Оставьте заявку
+							Полный спектр Грузоперевозок<br/>
+							2 года на рынке, 163 машин
 						</h1>
 						<span className={style.subHeader}>
-							Перевозка грузов всего по <span className={style.yellow}>190 тг</span> за км
+							Доставим сейчас - Оплата после
+							<ul>
+								<li>Гарантия - Ценность вашего груза</li>
+								<li>Доставим груз в срок</li>
+								<li>Оставьте заявку и узнайте цену</li>
+							</ul>
 						</span>
 						<img className={style.backgroundImg} src={headerPhoto1} alt={'machine'}/>
 					</div>

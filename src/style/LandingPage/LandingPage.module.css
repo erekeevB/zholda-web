@@ -28,11 +28,13 @@
 	text-transform: uppercase;
 	color: #343435;
 	margin-bottom: 16px;
+	z-index: 2;
+	position: relative;
 }
 
 .subHeader {
 	display: block;
-	font-weight: 300;
+	font-weight: 400;
 	font-size: 24px;
 	line-height: 30px;
 	color: #343435;
@@ -45,9 +47,15 @@
 	font-weight: 400;
 }
 
+.subHeader ul {
+	font-weight: 300;
+	margin: 10px 0 0;
+	text-align: start;
+}
+
 .backgroundImg {
 	position: absolute;
-	top: 215px;
+	top: 295px;
 	min-height: 147px;
 }
 
@@ -99,6 +107,12 @@
 		font-size: 16px;
 		line-height: 20px;
 		text-align: center;
+	}
+
+	.subHeader ul {
+		width: fit-content;
+		margin: 10px auto 0;
+		padding-left: 20px
 	}
 
 	.backgroundImg {
