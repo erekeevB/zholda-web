@@ -10,6 +10,7 @@ import {toast} from "react-hot-toast";
 import {Desktop, Mobile} from "./MediaContainer";
 import useInput from "../utils/useInput";
 import {emptyStrValidation, phoneValidation, validateAllInputs} from "../utils/validation";
+import {event} from "react-ga";
 
 const OrderModal = () => {
 
@@ -63,6 +64,10 @@ const OrderModal = () => {
 			})
 				.then(success => {
 					if (success) {
+						event({
+							category: "Оформить заказ",
+							action: "User requested a delivery service",
+						});
 						toast.success('Ваша заявка успешно принята. Ждите звонка в течение дня', {
 							duration: 7000,
 							position: 'bottom-right'

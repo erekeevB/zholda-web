@@ -6,6 +6,7 @@ import useInput from "../../utils/useInput";
 import {emptyStrValidation, phoneValidation, validateAllInputs} from "../../utils/validation";
 import useJoinModal from "../../state/useJoinModal";
 import {toast} from "react-hot-toast";
+import {event} from "react-ga";
 
 const JoinPartnerModal = ({closeModal: closeHeaderModal}) => {
 
@@ -32,6 +33,10 @@ const JoinPartnerModal = ({closeModal: closeHeaderModal}) => {
 		if (!validateAllInputs(name, phone)) {
 			sendPartnerInfo({name: name.value, phone: phone.value}).then(success => {
 				if (success) {
+					event({
+						category: "Стать Партнером",
+						action: "User requested a partnership",
+					})
 					toast.success(
 						'Ваша заявка успешно принята. Ждите звонка в течение дня', {
 							duration: 7000,

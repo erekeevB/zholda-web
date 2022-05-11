@@ -6,8 +6,15 @@ import Footer from "./components/Footer";
 import './firebase/firebase'
 import {Toaster} from "react-hot-toast";
 import ContactButtonMobile from "./components/contactButtonMobile";
+import {useEffect} from "react";
+import {initialize} from "react-ga";
 
 function App() {
+
+	useEffect(() => {
+		initialize('G-VTVNYNJSHM')
+	}, [])
+
 	return (
 		<div className="App">
 			<ContactButtonMobile/>
