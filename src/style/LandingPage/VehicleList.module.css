@@ -10,6 +10,7 @@
 .itemContainer {
 	padding: 32px 24px 24px;
 	height: fit-content;
+	overflow: hidden;
 }
 
 .itemContainer:hover {
@@ -33,10 +34,11 @@
 }
 
 .itemContainer:hover > .img {
-	transform: scale(1.1);
+	transform: scale(3.3);
 }
 
 .img {
+	transform: scale(3);
 	max-height: 142px;
 	height: 100%;
 	max-width: 320px;
@@ -44,6 +46,14 @@
 	width: 100%;
 	object-fit: contain;
 	transition: all ease 0.3s;
+}
+
+.itemContainer:last-child .img {
+	transform: scale(1);
+}
+
+.itemContainer:last-child:hover .img {
+	transform: scale(1.1);
 }
 
 .nameWrapper {

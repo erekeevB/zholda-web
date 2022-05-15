@@ -1,8 +1,8 @@
 import vehicle1 from '../../static/LandingPage/vehicles/vehicle1.png'
 import vehicle2 from '../../static/LandingPage/vehicles/vehicle2.png'
 import vehicle3 from '../../static/LandingPage/vehicles/vehicle3.png'
-import vehicle4 from '../../static/LandingPage/vehicles/vehicle4.jpeg'
-import vehicle5 from '../../static/LandingPage/vehicles/vehicle5.jpeg'
+import vehicle4 from '../../static/LandingPage/vehicles/vehicle4.png'
+import vehicle5 from '../../static/LandingPage/vehicles/vehicle5.png'
 import vehicle6 from '../../static/LandingPage/vehicles/vehicle6.jpeg'
 import VehicleListItem from "./VehicleListItem";
 import style from '../../style/LandingPage/VehicleList.module.css'
@@ -13,15 +13,15 @@ import {ReactComponent as Chevron} from "../../static/icons/chevron.svg";
 
 const vehicles = [
 	{
-		name: 'Тентованный газель',
+		name: 'Трал',
 		img: vehicle1
 	},
 	{
-		name: 'Фермер',
+		name: 'Тентовый 105 мега',
 		img: vehicle2
 	},
 	{
-		name: 'Термобудка',
+		name: 'Контейнеравоз',
 		img: vehicle3
 	},
 	{
@@ -29,13 +29,13 @@ const vehicles = [
 		img: vehicle4
 	},
 	{
-		name: 'Тентованная фура',
+		name: 'Тентовый 92',
 		img: vehicle5
 	},
-	{
-		name: 'Трал = Негабаритный груз',
-		img: vehicle6
-	}
+	// {
+	// 	name: 'Площадка (платформа)',
+	// 	img: vehicle6
+	// }
 ]
 
 const VehicleList = () => {
