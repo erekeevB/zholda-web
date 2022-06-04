@@ -53,7 +53,7 @@
 	column-gap: 10px;
 	text-align: start;
 	align-items: center;
-	margin-bottom: 24px;
+	margin-right: 0 !important;
 }
 
 .icon {
@@ -103,5 +103,9 @@
 		width: 100%;
 		border-radius: 0;
 		padding: 0 15px 40px;
+	}
+
+	.contactItem {
+		margin-bottom: 24px;
 	}
 }

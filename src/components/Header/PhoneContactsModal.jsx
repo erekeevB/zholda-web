@@ -8,7 +8,7 @@ import {useEffect} from "react";
 import {useDisableBodyScroll} from "../../utils/useDisabledBodyScroll";
 import {Desktop, Mobile} from "../MediaContainer";
 import {ReactComponent as Logo} from "../../static/logoWithText.svg";
-import {phoneLink, whatsAppLink} from "../../utils/constants";
+import {instaLink, phoneLink, whatsAppLink} from "../../utils/constants";
 
 const ContactItem = ({svg, link, phone, text, style: colorStyle}) => {
 
@@ -61,7 +61,7 @@ const PhoneContactsModal = ({closeModal, openModal}) => {
 				/>
 				<ContactItem
 					svg={<Instagram/>}
-					link={'https://www.instagram.com/zholda.kz/'}
+					link={instaLink}
 					phone={'Мы в Instagram!'}
 					text={'Подписывайся на <strong>@zholda.kz</strong>'}
 					style={{
@@ -77,12 +77,14 @@ const PhoneContactsModal = ({closeModal, openModal}) => {
 					style={{background: '#FDBF3D'}}
 				/>
 				<Mobile>
-					<Button className={`${style.button} ${style.mobile}`} onClick={openModal} type={'primary'}>Заказать
-						звонок</Button>
+					<Button className={`${style.button} ${style.mobile}`} onClick={openModal} type={'primary'}>
+						Заказать звонок
+					</Button>
 				</Mobile>
 				<Desktop>
-					<Button className={`${style.button} ${style.desktop}`} onClick={openModal} type={'primary'}>Заказать
-						звонок</Button>
+					<Button className={`${style.button} ${style.desktop}`} onClick={openModal} type={'primary'}>
+						Заказать звонок
+					</Button>
 				</Desktop>
 			</div>
 			<div onClick={closeModal} className={'modalBackground'}/>
